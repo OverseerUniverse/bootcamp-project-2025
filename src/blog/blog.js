@@ -16,7 +16,7 @@ var blogs = [
         slug: "blog-projects.html",
     },
 ];
-var blogContainer = document.getElementById("blog-container");
+var mainBlogPage = document.getElementById("blog-container");
 function constructBlogPage() {
     blogs.forEach(function (blog) {
         var newDiv = document.createElement("div");
@@ -37,8 +37,8 @@ function constructBlogPage() {
         newDiv.appendChild(text);
         newDiv.appendChild(link);
         link.appendChild(learnMore);
-        if (blogContainer) {
-            blogContainer.appendChild(newDiv);
+        if (mainBlogPage) {
+            mainBlogPage.appendChild(newDiv);
         }
         else {
             console.error("blog container not found");
@@ -87,7 +87,10 @@ function constructBlogPages() {
         }
     }
 }
-if (blogContainer) {
+//
+if (mainBlogPage) {
     constructBlogPage();
 }
-constructBlogPages();
+else {
+    constructBlogPages();
+}
