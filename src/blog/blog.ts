@@ -26,7 +26,7 @@ const blogs: Blog[] = [
   },
 ];
 
-const blogContainer = document.getElementById("blog-container");
+const mainBlogPage = document.getElementById("blog-container");
 
 function constructBlogPage() {
   blogs.forEach((blog) => {
@@ -55,8 +55,8 @@ function constructBlogPage() {
     newDiv.appendChild(link);
     link.appendChild(learnMore);
 
-    if (blogContainer) {
-      blogContainer.appendChild(newDiv);
+    if (mainBlogPage) {
+      mainBlogPage.appendChild(newDiv);
     } else {
       console.error("blog container not found");
     }
@@ -98,24 +98,25 @@ function constructBlogPages() {
         blogTitle.appendChild(title);
       }
 
-      const aboutMe = document.getElementById("blog-about-me");
-      const projects = document.getElementById("blog-projects");
+      const blogAboutMe = document.getElementById("blog-about-me");
+      const blogProjects = document.getElementById("blog-projects");
 
-      if (blog.slug == "blog-about-me.html" && blogTitle && aboutMe) {
-        aboutMe.appendChild(leftDiv);
-        aboutMe.appendChild(rightDiv);
-        aboutMe.appendChild(blogTitle);
+      if (blog.slug == "blog-about-me.html" && blogTitle && blogAboutMe) {
+        blogAboutMe.appendChild(leftDiv);
+        blogAboutMe.appendChild(rightDiv);
+        blogAboutMe.appendChild(blogTitle);
       }
-      if (blog.slug == "blog-projects.html" && blogTitle && projects) {
-        projects.appendChild(leftDiv);
-        projects.appendChild(rightDiv);
-        projects.appendChild(blogTitle);
+      if (blog.slug == "blog-projects.html" && blogTitle && blogProjects) {
+        blogProjects.appendChild(leftDiv);
+        blogProjects.appendChild(rightDiv);
+        blogProjects.appendChild(blogTitle);
       }
     }
   }
 }
 
-if (blogContainer) {
+//
+if (mainBlogPage) {
   constructBlogPage();
 } else {
   constructBlogPages();
