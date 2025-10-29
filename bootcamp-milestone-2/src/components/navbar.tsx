@@ -1,0 +1,33 @@
+import React from "react";
+import style from "./narbar.module.css";
+import Link from "next/link";
+
+export default function Navbar() {
+  return (
+    // To add style from the navbar module use classname={style.}
+    <header>
+      <nav className={style.navbar}>
+        <h1 className={style.logo}>
+          <Link href="/">Index Page</Link>
+        </h1>
+        <ul className={style.navlist}>
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link href="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link href="/portfolio">Portfolio</Link>
+          </li>
+          <li>
+            <Link href="/resume">Resume</Link>
+          </li>
+          <li>
+            <Link href="/contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
+}

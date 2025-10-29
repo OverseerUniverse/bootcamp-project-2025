@@ -1,0 +1,38 @@
+/* CSS for contact form */
+
+.contact h1 {
+}
+
+.contact label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: Georgia;
+  font-weight: bold;
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+}
+
+/* Add some spacing to the form */
+.contact form {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.contact .submit {
+  background: lightcoral;
+  color: #fff;
+  font-size: 16px;
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+}
