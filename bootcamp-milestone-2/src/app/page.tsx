@@ -1,4 +1,5 @@
 import style from "./home.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -21,8 +22,12 @@ export default function Home() {
           <p>
             When it comes to programming, I have made websites in the past for
             local businesses in Santa Maria like <em>lacafecita</em>. Here is a
-            secret access code
-            <a href="https://lacafecita.com/secretaccess">lacafecita.com</a>
+            secret access link
+            <Link href="https://lacafecita.com/secretaccess">
+              {" "}
+              {/*This whitespace is becuz prettier extension is dumb (very important)*/}
+              lacafecita.com{" "}
+            </Link>
             (dont actually make a purchase <strong>IT WILL CHARGE YOU</strong>)
             For this site I used Laravel as the backend with a React frontend! I
             also enjoy programming Roblox games if I have the spare time, I

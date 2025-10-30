@@ -1,6 +1,5 @@
 /* CSS for blog page */
-
-#blog-container {
+.blogContainer {
   h1 {
     font-size: 35px;
   }
@@ -30,4 +29,22 @@
   .right {
     padding: 20px;
   }
+}
+
+.blogLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  min-height: 100vh;
+}
+
+.blogCard {
+  max-width: 800px;
+  width: 100%;
+  background-color: #ece6e6;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
 }

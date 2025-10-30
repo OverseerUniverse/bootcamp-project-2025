@@ -1,0 +1,19 @@
+
+.blogs {
+  h1 {
+    font-size: 35px;
+  }
+
+  img {
+    width: 100%;
+  }
+  display: flex;
+  align-items: center;
+
+  .left {
+    max-width: 40%;
+  }
+  .right {
+    padding: 20px;
+  }
+}

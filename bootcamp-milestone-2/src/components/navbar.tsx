@@ -8,7 +8,7 @@ export default function Navbar() {
     <header>
       <nav className={style.navbar}>
         <h1 className={style.logo}>
-          <Link href="/">Index Page</Link>
+          <Link href="/">Nathaniel Victorino</Link>
         </h1>
         <ul className={style.navlist}>
           <li>
