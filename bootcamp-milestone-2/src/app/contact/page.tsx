@@ -2,7 +2,7 @@ import style from "./contact.module.css";
 
 export default function contact() {
   return (
-    <div>
+    <div className={style.page}>
       <h1 className="pageTitle">📨 Contact Me!</h1>
       <div className={style.contact}>
         <form id="contact-form">

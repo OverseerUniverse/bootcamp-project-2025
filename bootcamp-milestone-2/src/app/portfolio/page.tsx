@@ -1,29 +1,38 @@
-import Link from "next/link";
 import style from "./portfolio.module.css";
+import Portfolio from "@/database/portfolioSchema";
+import connectDB from "@/database/db";
+import PortfolioPreview from "@/components/portfolioPreview";
 
-export default function portfolio() {
+type IParams = {
+  params: {
+    slug: string;
+  };
+};
+
+async function getPortfolios() {
+  await connectDB();
+  try {
+    const portfolios = await Portfolio.find().sort({ date: -1 }).orFail();
+    return portfolios;
+  } catch (err) {
+    return null;
+  }
+}
+
+export default async function portfolio({ params }: IParams) {
+  // Fetch portfolios using your function
+  const portfolios = await getPortfolios();
+
+  if (!portfolios) {
+    return <div>No portfolios found.</div>;
+  }
   return (
     <div>
       <h1 className="pageTitle">👏 Portfolio</h1>
       <div className={style.project}>
-        <Link href="/">
-          <img src="../images/domocat.jpg" alt="cat chase domo?" />
-        </Link>
-        <div className={style.projectDetails}>
-          <p className={style.projectName}>super duper cool project</p>
-          <p className={style.projectDescription}>
-            its very cool, click below to see!
-          </p>
-          <a href="https://lacafecita.com/secretaccess">Learn More</a>
-        </div>
-      </div>
-      <div className={style.portfolio}>
-        <div>
-          <img src="../images/domocat.jpg" alt="cat chase domo?" />
-        </div>
-        <div className={style.portfolioText}>
-          <p>yooo here is some text in da div</p>
-        </div>
+        {portfolios.map((portfolio: any, index: number) => (
+          <PortfolioPreview {...portfolio.toObject()} key={index} />
+        ))}
       </div>
     </div>
   );

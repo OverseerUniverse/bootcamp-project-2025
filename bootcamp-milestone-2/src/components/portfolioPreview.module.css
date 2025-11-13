@@ -1,0 +1,90 @@
+/* CSS for portfolio grid */
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: 2px solid blue; /* debug */
+  background: #fff;
+  overflow: hidden;
+  margin-bottom: 20px;
+  min-height: 100vh;
+}
+
+.itemLink {
+  width: 70%;
+
+  /* Debug border */
+  border: 2px solid red;
+}
+
+.projectImage {
+  object-fit: cover;
+  width: 100%;
+  height: 500px;
+  flex-basis: 50px;
+  flex-grow: 2;
+  /* Debug border */
+  border: 2px solid black;
+}
+
+.projectDetails {
+  display: flex;
+  background-color: var(--cg-white);
+  flex-shrink: 1;
+  padding: 0 20px;
+  margin: 0px;
+  line-height: 1.5;
+  overflow: scroll;
+
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+
+  /* Debug border */
+  border: 2px solid green;
+}
+
+.projectDetails a {
+  color: var(--cg-black);
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.projectDetails a:hover {
+  color: var(--cg-blue);
+  text-decoration: underline;
+}
+
+.projectDetails {
+  font-weight: lighter;
+}
+
+.projectName {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.portfolio img {
+  width: 40%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portfolioText {
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+}

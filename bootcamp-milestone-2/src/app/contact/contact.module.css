@@ -1,6 +1,9 @@
 /* CSS for contact form */
 
-.contact h1 {
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
 }
 
 .contact label {

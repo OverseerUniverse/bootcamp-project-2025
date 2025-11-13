@@ -9,12 +9,12 @@ type IParams = {
   };
 };
 
-export default async function project({ params }: IParams) {
+export default async function blog({ params }: IParams) {
   //const blog = blogs.find((blog) => blog.title === "My Past Projects!");
   await connectDB();
   const { slug } = params;
 
-  //try {
+  try {
   const blog = await Blog.findOne({ slug: `/blog/${slug}` }).orFail();
   return (
     <div>
@@ -25,7 +25,7 @@ export default async function project({ params }: IParams) {
       </div>
     </div>
   );
-  //} catch (err) {
-  // return <div>Blog not found.</div>;
-  //}
+  } catch (err) {
+   return <div>Blog not found.</div>;
+  }
 }

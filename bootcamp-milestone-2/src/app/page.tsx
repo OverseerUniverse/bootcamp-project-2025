@@ -11,9 +11,7 @@ export default function Home() {
         </div>
         <div className={style.aboutText}>
           <p>
-            Hi I'm Nathaniel Victorino, a 3rd year transfer student from Allan
-            Hancock College! I grew up in Guadalupe with my mom and two sisters
-            and 3 chihuahuas. I love playing video games like elden ring,
+            Hi I'm Nathaniel Victorino. I love playing video games like elden ring,
             roblox, <strong>call of duty</strong>, valorant, minecraft, ark, and
             a lot more. Outside of my dungeon, I enjoy going out to eat, going
             to the gym, skateboarding (occassionally because I always get
