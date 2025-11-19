@@ -1,5 +1,11 @@
 import mongoose, { Schema } from "mongoose";
 
+type IComment = {
+		user: string;
+		comment: string;
+		time: Date;
+}
+
 // typescript type (can also be an interface)
 interface Blog {
   title: string;
@@ -9,7 +15,7 @@ interface Blog {
   content: string; // text content for individual blog page
   image: string; // url for string in public
   imageAlt: string; // alt for image
-  comments: Comment[]; // array for comments
+  comments: IComment[]; // array for comments
 };
 
 // mongoose schema

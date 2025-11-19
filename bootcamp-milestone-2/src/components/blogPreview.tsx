@@ -14,7 +14,7 @@ export default function BlogPreview(props: any) {
     );
   }
 
-  if (props.slug) {
+  if (props.slug && !props.isActive) {
     content = <Link href={props.slug}>Learn More</Link>;
   } else {
     content = <Link href="/blog">Back</Link>;
