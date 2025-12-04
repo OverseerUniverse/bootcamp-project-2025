@@ -13,13 +13,11 @@ type IParams = {
 export default async function blog({ params }: IParams) {
   //const blog = blogs.find((blog) => blog.title === "My Past Projects!");
   await connectDB();
-  const { slug } = params;
+  const { slug } = await params;
 
   try {
     const blog = await Blog.findOne({ slug: `/blog/${slug}` }).orFail();
-    const comments = Array.isArray(blog.toObject().comments)
-      ? blog.toObject().comments
-      : [];
+    const comments = (blog.toObject().comments ?? []) as any[];
 
     return (
       <div>

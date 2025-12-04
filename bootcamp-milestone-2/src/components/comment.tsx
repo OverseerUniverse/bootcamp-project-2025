@@ -1,9 +1,9 @@
 import style from "@/components/comment.module.css";
 
 type IComment = {
-  user: string;
+  name: string;
   comment: string;
-  time: Date;
+  date: Date;
 };
 {
   /* When we pass props, the name that we use to pass values
@@ -26,22 +26,13 @@ function parseCommentTime(time: any): Date | null {
 }
 
 function Comment({ comment }: CommentProps) {
-  let user: string = "";
-  let text: string = "";
-  let timeValue: any = null;
+  let user: string = comment.name;
+  let text: string = comment.comment;
+  const parsed = parseCommentTime(comment.date);
 
-  if (Array.isArray(comment)) {
-    [user = "Unknown", text = "", timeValue = null] = comment;
-  } else {
-    user = comment.user ?? "Unknown";
-    text = comment.text ?? "";
-    timeValue = comment.time ?? null;
-  }
-
-  const parsed = parseCommentTime(timeValue);
   return (
-    <div>
-      <h4>{user}</h4>
+    <div className={style.comment}>
+      <h4>{user || "Unknown"}</h4>
       <p>{text}</p>
       <span>{parsed ? parsed.toDateString() : "No comments found"}</span>
     </div>
