@@ -1,24 +1,18 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import connectDB from "@/database/db";
 import blogSchema from "@/database/blogSchema";
 
-type IParams = {
-  params: {
-    slug: string;
-  };
-};
-// test using http://localhost:3000/api/blogs/about/comment
-export async function POST(req: NextRequest, { params }: IParams) {
+export async function POST(req: Request, { params }: any) {
   try {
     await connectDB();
+
     const body = await req.json();
-    const { slug: BlogSlug } = await params;
-    // validate body
+    const BlogSlug = params.slug;
+
     if (!body || !body.name || !body.comment) {
       return NextResponse.json("Missing fields", { status: 400 });
     }
 
-    // push comment object to document
     const updatedBlog = await blogSchema.findOneAndUpdate(
       { slug: `/blog/${BlogSlug}` },
       {
@@ -30,7 +24,7 @@ export async function POST(req: NextRequest, { params }: IParams) {
           },
         },
       },
-      { new: true } // return updated document
+      { new: true }
     );
 
     if (!updatedBlog) {

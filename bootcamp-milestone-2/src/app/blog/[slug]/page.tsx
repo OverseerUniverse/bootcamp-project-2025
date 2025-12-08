@@ -5,13 +5,12 @@ import connectDB from "@/database/db";
 import Comment from "@/components/comment";
 
 type IParams = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export default async function blog({ params }: IParams) {
-  //const blog = blogs.find((blog) => blog.title === "My Past Projects!");
   await connectDB();
   const { slug } = await params;
 

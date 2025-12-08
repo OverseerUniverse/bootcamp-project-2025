@@ -4,9 +4,9 @@ import connectDB from "@/database/db";
 import PortfolioPreview from "@/components/portfolioPreview";
 
 type IParams = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 async function getPortfolios() {

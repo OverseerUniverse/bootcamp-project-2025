@@ -4,9 +4,9 @@ import Blog from "@/database/blogSchema";
 import connectDB from "@/database/db";
 
 type IParams = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 async function getBlogs() {
